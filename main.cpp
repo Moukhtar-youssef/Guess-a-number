@@ -9,6 +9,7 @@ int random_number;
 int user_number;
 void Guess_The_Number();
 
+
 void play_again() {
     string play_response;
     cout << "Wanna play again? [y] [n] \n";
@@ -28,7 +29,11 @@ void Guess_The_Number() {
     cout << "Choose a number between 1 and 100: ";
     while (true) {
         cin >> user_number;
-        if (user_number > random_number) {
+        if (user_number < 0 || user_number > 100) {
+            cout << "Invalid input \n";
+            cout << "Plz choose a number between 1 and 100 \n";
+        }
+        else if (user_number > random_number) {
             cout << "try lower \n";
         }
         else if (user_number < random_number) {
